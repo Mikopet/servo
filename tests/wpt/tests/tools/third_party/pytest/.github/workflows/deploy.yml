@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   package:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       SETUPTOOLS_SCM_PRETEND_VERSION: ${{ github.event.inputs.version }}
     timeout-minutes: 10
@@ -38,7 +38,7 @@ jobs:
   deploy:
     if: github.repository == 'pytest-dev/pytest'
     needs: [package]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment: deploy
     timeout-minutes: 30
     permissions:
@@ -69,7 +69,7 @@ jobs:
     #       the goal being of using a github action script to push the release data
     #       after success instead of creating a complete python/tox env
     needs: [deploy]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: write

@@ -7,6 +7,6 @@ on:
 
 jobs:
   DCO:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - run: echo "dummy DCO workflow (it won't run any check actually) to trigger by merge_group in order to enable merge queue"

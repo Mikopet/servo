@@ -111,7 +111,7 @@ jobs:
 
   build-result:
     name: Result
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: always()
     # `needs: "build"` is necessary to detect cancellation.
     needs: [ "decision", "build" ]

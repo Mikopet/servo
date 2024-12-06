@@ -34,7 +34,7 @@ jobs:
   # reserve a self-hosted runner for us.
   runner-select:
     name: Select Runner
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       unique-id: ${{ steps.select.outputs.unique_id }}
       selected-runner-label: ${{ steps.select.outputs.selected_runner_label }}

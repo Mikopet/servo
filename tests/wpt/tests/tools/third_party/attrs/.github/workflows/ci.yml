@@ -22,7 +22,7 @@ permissions: {}
 jobs:
   tests:
     name: Tests & Mypy on ${{ matrix.python-version }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
@@ -77,7 +77,7 @@ jobs:
 
   coverage:
     name: Combine & check coverage.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: tests
 
     steps:
@@ -114,7 +114,7 @@ jobs:
 
   docs:
     name: Build docs & run doctests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -128,7 +128,7 @@ jobs:
 
   pyright:
     name: Check types using pyright
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -144,7 +144,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-24.04, windows-latest]
 
     steps:
       - uses: actions/checkout@v4
@@ -169,7 +169,7 @@ jobs:
       - install-dev
       - pyright
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Decide whether the needed jobs succeeded or failed

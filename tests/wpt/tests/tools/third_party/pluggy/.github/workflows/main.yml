@@ -48,41 +48,41 @@ jobs:
             tox_env: "pypy3"
           - name: "ubuntu-py38"
             python: "3.8"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py38"
             use_coverage: true
           - name: "ubuntu-py38-pytestmain"
             python: "3.8"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py38-pytestmain"
             use_coverage: true
           - name: "ubuntu-py39"
             python: "3.9"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py39"
             use_coverage: true
           - name: "ubuntu-py310"
             python: "3.10"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py310"
           - name: "ubuntu-py311"
             python: "3.11"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py311"
             use_coverage: true
           - name: "ubuntu-py312"
             python: "3.12-dev"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "py312"
             use_coverage: true
           - name: "ubuntu-pypy3"
             python: "pypy3.9"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "pypy3"
             use_coverage: true
           - name: "ubuntu-benchmark"
             python: "3.8"
-            os: ubuntu-latest
+            os: ubuntu-24.04
             tox_env: "benchmark"
 
     steps:
@@ -119,7 +119,7 @@ jobs:
 
   deploy:
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags') && github.repository == 'pytest-dev/pluggy'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v3

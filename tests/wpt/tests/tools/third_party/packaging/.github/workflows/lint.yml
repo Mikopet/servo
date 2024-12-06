@@ -11,7 +11,7 @@ on:
 jobs:
   lint:
     name: nox -s lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v1
@@ -31,7 +31,7 @@ jobs:
 
   build:
     name: Build sdist and wheel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Linting verifies that the project is in an acceptable state to create files
     # for releasing.
     # And this action should be run whenever a release is ready to go public as

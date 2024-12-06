@@ -7,7 +7,7 @@ on:
 jobs:
   parse-comment:
     name: Trigger Try
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     concurrency:
       group: try-${{ github.event.number }}
     outputs:
@@ -142,7 +142,7 @@ jobs:
   results:
     name: Results
     needs: ["parse-comment", "run-try"]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ always() && needs.parse-comment.outputs.try_string }}
     steps:
       - name: Success

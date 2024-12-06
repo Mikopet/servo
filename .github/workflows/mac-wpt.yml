@@ -79,7 +79,7 @@ jobs:
 
   report-test-results:
     name: Process WPT Results
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     if: ${{ always() }}
     needs: mac-wpt
     steps:

@@ -14,7 +14,7 @@ env:
 jobs:
   coverage:
     name: Run test coverage checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
 
   quality:
     name: Run code quality checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
@@ -53,7 +53,7 @@ jobs:
     needs:
       - coverage
       - quality
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         python:
